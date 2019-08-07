@@ -1,0 +1,9 @@
+<h2>List of Supermarkets</h2>
+<ul class="supermarkets">
+  <li *ngFor="let supermarket of supermarkets" (click)="onSelect(supermarket)"
+  [class.selected]="supermarket === selectedSupermarket">
+    <span class="badge">{{supermarket.id}}</span> {{supermarket.name}}
+  </li>
+</ul>
+
+<app-supermarket-detail [supermarket]="selectedSupermarket"></app-supermarket-detail>
