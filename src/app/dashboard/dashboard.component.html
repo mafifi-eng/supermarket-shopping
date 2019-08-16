@@ -1,0 +1,9 @@
+<h3>Top Supermarket</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let supermarket of supermarkets" class="col-1-4" routerLink="/detail/{{supermarket.id}}">
+    <div class="module supermarket">
+      <h4>{{supermarket.name}}</h4>
+    </div>
+  </a>
+</div>
+<app-supermarket-search></app-supermarket-search>

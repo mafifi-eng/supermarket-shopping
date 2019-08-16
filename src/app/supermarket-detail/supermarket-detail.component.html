@@ -1,4 +1,3 @@
-<div *ngIf="supermarket">
   <h2>{{supermarket.name | uppercase}} Details</h2>
   <div><span>id: </span>{{supermarket.id}}</div>
   <div>
@@ -6,4 +5,4 @@
       <input [(ngModel)]="supermarket.name" placeholder="name"/>
     </label>
   </div>
-  </div>
+  <button (click)="goSupermarket(supermarket)">Select Supermarket</button>

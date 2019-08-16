@@ -1,9 +1,12 @@
+<div class="supermarkets-view-container">
 <h2>List of Supermarkets</h2>
 <ul class="supermarkets">
-  <li *ngFor="let supermarket of supermarkets" (click)="onSelect(supermarket)"
-  [class.selected]="supermarket === selectedSupermarket">
+  <li *ngFor="let supermarket of supermarkets" [class.selected]="supermarket === selectedSupermarket"
+  (click)="onSelect(supermarket)">
     <span class="badge">{{supermarket.id}}</span> {{supermarket.name}}
   </li>
 </ul>
-
-<app-supermarket-detail [supermarket]="selectedSupermarket"></app-supermarket-detail>
+</div>
+<div *ngIf="selectedSupermarket" class="supermarkets-view-container">
+  <app-supermarket-detail [supermarket]="selectedSupermarket"></app-supermarket-detail>
+</div>

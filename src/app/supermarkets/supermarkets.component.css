@@ -1,3 +1,14 @@
+.supermarkets-view-container {
+    max-width:50%;
+    width:50%;
+    float:left;
+    height:100vh;
+    overflow-x:
+    scroll;
+    overflow-y: scroll;
+    overflow:scroll;
+  }
+
 .supermarkets {
     margin: 0 0 2em 0;
     list-style-type: none;

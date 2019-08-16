@@ -5,16 +5,39 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SupermarketsComponent } from './supermarkets/supermarkets.component';
 import { SupermarketDetailComponent } from './supermarket-detail/supermarket-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
+import { SupermarketSearchComponent } from './supermarket-search/supermarket-search.component';
+import { SelectedSupermarketComponent } from './selected-supermarket/selected-supermarket.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SupermarketsComponent,
-    SupermarketDetailComponent
-  ],
+    SupermarketDetailComponent,
+    MessagesComponent,
+    DashboardComponent,
+    SupermarketSearchComponent,
+    SelectedSupermarketComponent,
+    NavbarComponent
+    ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+// and returns simulated server responses.
+// Remove it when a real server is ready to receive requests.
+HttpClientInMemoryWebApiModule.forRoot(
+  InMemoryDataService, { dataEncapsulation: false }
+)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

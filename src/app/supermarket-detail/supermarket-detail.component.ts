@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Supermarket } from '../supermarket';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-supermarket-detail',
@@ -10,9 +11,15 @@ export class SupermarketDetailComponent implements OnInit {
 
   @Input() supermarket: Supermarket;
 
-  constructor() { }
+  constructor(
+    private router: Router) {}
 
   ngOnInit() {
+   
+  }
+
+  goSupermarket(supermarket: Supermarket): void {
+    this.router.navigate(['/supermarket/' + supermarket.id]);
   }
 
 }

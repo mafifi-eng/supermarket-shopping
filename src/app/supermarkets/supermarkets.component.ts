@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Supermarket } from '../supermarket';
-import { SUPERMARKETS } from '../mock-supermarkets';
+import { SupermarketService } from '../supermarket.service';
 
 @Component({
   selector: 'app-supermarkets',
@@ -9,12 +9,18 @@ import { SUPERMARKETS } from '../mock-supermarkets';
 })
 export class SupermarketsComponent implements OnInit {
 
-  supermarkets = SUPERMARKETS;
+  supermarkets: Supermarket[];
   selectedSupermarket: Supermarket;
 
-  constructor() { }
+  constructor(private supermarketService: SupermarketService) { }
 
   ngOnInit() {
+    this.getSupermarket();
+  }
+
+  getSupermarket(): void {
+    this.supermarketService.getSupermarkets()
+    .subscribe(supermarkets => this.supermarkets = supermarkets);;
   }
 
   onSelect(supermarket: Supermarket): void {
