@@ -1,4 +1,11 @@
 <app-navbar></app-navbar>
+<app-supermarket-carousel></app-supermarket-carousel>
+<div class="promotions"><h3>{{supermarket.name}} Promotions</h3></div>
+<app-supermarket-promotions></app-supermarket-promotions>
+<div class="featured"><h3>{{supermarket.name}} Featured Items</h3></div>
+<app-supermarket-featured-items></app-supermarket-featured-items>
+<div class="best-seller"><h3>{{supermarket.name}} Best Sellers</h3></div>
+<app-supermarket-best-sellers></app-supermarket-best-sellers>
 <h2>{{supermarket.name | uppercase}} Details</h2>
 <div><span>id: </span>{{supermarket.id}}</div>
 <button (click)="goBack()">go back</button>

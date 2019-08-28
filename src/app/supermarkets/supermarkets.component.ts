@@ -15,12 +15,14 @@ export class SupermarketsComponent implements OnInit {
   constructor(private supermarketService: SupermarketService) { }
 
   ngOnInit() {
-    this.getSupermarket();
+    this.getSupermarkets();
+    if (localStorage.getItem('supermarketId'))
+    localStorage.removeItem('supermarketId');
   }
 
-  getSupermarket(): void {
+  getSupermarkets(): void {
     this.supermarketService.getSupermarkets()
-    .subscribe(supermarkets => this.supermarkets = supermarkets);;
+    .subscribe(supermarkets => this.supermarkets = supermarkets);
   }
 
   onSelect(supermarket: Supermarket): void {

@@ -1,0 +1,17 @@
+<div class="container">
+    <div id="carousePromotions" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div *ngFor="let promo of promotions.products" class="col-sm"><img class="d-block w-100" src="assets/images/{{promo.photo}}" alt="1 slide">
+                    <div>{{promo.price}}</div><div>{{promo.description}}</div><div><button type="button" (click)="addTOCart(promo.id)" class="btn btn-primary">Add to Cart</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ol class="carousel-indicators">
+                <li data-target="#carousePromotions" data-slide-to="0" class="active"></li>
+                <li data-target="#carousePromotions" data-slide-to="1"></li>
+        </ol>
+    </div>
+</div>

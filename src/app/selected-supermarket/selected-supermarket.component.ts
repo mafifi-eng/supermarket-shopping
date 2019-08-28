@@ -21,7 +21,10 @@ export class SelectedSupermarketComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    localStorage.setItem('supermarketId', JSON.stringify(id));
     this.getSupermarket();
+
   }
 
   getSupermarket(): void {

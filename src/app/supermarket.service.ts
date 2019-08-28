@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Supermarket } from './supermarket';
-import { SUPERMARKETS } from './mock-supermarkets';
 import { Observable, of } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { CarouselImgs } from './carousel-img';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,8 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class SupermarketService {
 
   private supermarketsUrl = 'api/supermarkets';  // URL to web api
+  private supermarketsCarouselImg = 'api/supermarketsCarouselImg';
+  private supermarketIcon = 'api/supermarketIcon';
 
   constructor(
     private http: HttpClient,
@@ -21,7 +23,7 @@ export class SupermarketService {
     this.messageService.add('SupermarketService: fetched supermarkets');
     return this.http.get<Supermarket[]>(this.supermarketsUrl)
     .pipe(
-      tap(_ => this.log('fetched heroes')),
+      tap(_ => this.log('fetched supermarkets')),
       catchError(this.handleError<Supermarket[]>('getSupermarkets', []))
     );
   }
@@ -34,9 +36,17 @@ export class SupermarketService {
     );
   }
 
+  getSupermarketCarouselImg(id: number): Observable<CarouselImgs> {
+    const url = `${this.supermarketsCarouselImg}/${id}`;
+    return this.http.get<CarouselImgs>(url).pipe(
+      tap(_ => this.log(``)),
+      catchError(this.handleError<CarouselImgs>(`getSupermarketCarouselImg id=${id}`))
+    );
+  }
+
   /** Log a HeroService message with the MessageService */
 private log(message: string) {
-  this.messageService.add(`HeroService: ${message}`);
+  this.messageService.add(`${message}`);
 }
 
 /**
@@ -70,4 +80,5 @@ searchSupermarkets(term: string): Observable<Supermarket[]> {
     catchError(this.handleError<Supermarket[]>('searchSupermarkets', []))
   );
 }
+
 }

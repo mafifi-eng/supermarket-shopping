@@ -1,0 +1,18 @@
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div *ngFor="let img of supermarketCarouselImg.img" [class.active]="img === supermarketCarouselImg.img[0]" class="carousel-item">
+      <img src="{{img}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <ol class="carousel-indicators">
+    <li *ngFor="let img of supermarketCarouselImg.img; let i = index" data-target="#carouselIndicators" [attr.data-slide-to]="i" [class.active]="img === supermarketCarouselImg.img[0]"></li>
+  </ol>
+  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>

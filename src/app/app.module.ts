@@ -14,6 +14,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
 import { SupermarketSearchComponent } from './supermarket-search/supermarket-search.component';
 import { SelectedSupermarketComponent } from './selected-supermarket/selected-supermarket.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SupermarketCarouselComponent } from './supermarket-carousel/supermarket-carousel.component';
+import { SupermarketPromotionsComponent } from './supermarket-promotions/supermarket-promotions.component';
+import { SupermarketFeaturedItemsComponent } from './supermarket-featured-items/supermarket-featured-items.component';
+import { SupermarketBestSellersComponent } from './supermarket-best-sellers/supermarket-best-sellers.component';
+import { ProductComponent } from './product/product.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,13 @@ import { NavbarComponent } from './navbar/navbar.component';
     DashboardComponent,
     SupermarketSearchComponent,
     SelectedSupermarketComponent,
-    NavbarComponent
+    NavbarComponent,
+    SupermarketCarouselComponent,
+    SupermarketPromotionsComponent,
+    SupermarketFeaturedItemsComponent,
+    SupermarketBestSellersComponent,
+    ProductComponent,
+    CartComponent
     ],
   imports: [
     BrowserModule,

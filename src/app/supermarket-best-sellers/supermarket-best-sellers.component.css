@@ -1,0 +1,12 @@
+.carousel-indicators {
+    position: static;
+}
+.carousel-indicators li {
+    background-color:#343a40;
+}
+.carousel-control-next-icon {
+    background-color: black;
+}
+.carousel-control-prev-icon {
+    background-color: black;
+}
